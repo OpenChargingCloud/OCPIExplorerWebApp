@@ -21,3 +21,8 @@ npm start
 ```
 
 Your prefered web browser should automagically open http://localhost:1608
+
+
+## License
+
+[GNU Affero General Public License)](LICENSE)
