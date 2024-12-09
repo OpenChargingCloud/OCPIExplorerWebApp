@@ -34,10 +34,18 @@ class ocpiApp {
     constructor()
     {
 
+        const urlParams       = new URLSearchParams(window.location.search);
+        const url             = urlParams.get('url')   || undefined;
+        const token           = urlParams.get('token') || undefined;
+        const nobase64        = urlParams.has('nobase64');
+
         this.appDiv           = document.querySelector("#app") as HTMLDivElement;
 
         this.ocpiExplorerApp  = new OCPI.OCPIExplorer(
-                                    this.appDiv
+                                    this.appDiv,
+                                    url,
+                                    token,
+                                    nobase64
                                 );
 
         this.LogView          = document.querySelector("#logView") as HTMLDivElement;

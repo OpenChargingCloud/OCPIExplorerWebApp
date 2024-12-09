@@ -23,6 +23,21 @@ npm start
 Your prefered web browser should automagically open http://localhost:1608
 
 
+## Usage
+
+The web app understands the following HTTP query parameters:
+
+http://localhost:1608?url=https://api.example.org/ocpi2.1/versions&token=2435&nobase64
+
+
+| Parameter | Example Value                            | Description                                                           |
+|-----------|------------------------------------------|-----------------------------------------------------------------------|
+| url       | https://api.example.org/ocpi2.1/versions | The OCPI versions URL.                                                |
+| token     | abcd                                     | The OCPI access token.                                                |
+| nobase64  |                                          | The OCPI access token will not be base64 encoded before transmission. |
+
+
+
 ## License
 
 [GNU Affero General Public License)](LICENSE)
