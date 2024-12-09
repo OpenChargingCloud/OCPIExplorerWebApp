@@ -37,6 +37,7 @@ module.exports = {
         // e.g. "import './ocpiExplorer.scss'" within ocpiExplorerWebApp.ts
         test: /\.scss$/,
         use: [
+          //'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
@@ -115,6 +116,14 @@ module.exports = {
     port:  1608,
     hot:   true,
     allowedHosts: ['.charging.cloud'],
-    open:  true
+    open:  true,
+    watchFiles: ['src/**/*', 'static/**/*']
+    // devMiddleware: {
+    //   writeToDisk: true // Add this line to write changed files to disk (normally in-memory only!)
+    // }
+  },
+  watchOptions: {
+    aggregateTimeout: 300, // Delay (in milliseconds) after a change is detected before recompiling
+    poll:             true // Polling mode for file watching. Seems to detect and recompile nested changes within TypeScript files more reliably!
   }
 };

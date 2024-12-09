@@ -49,6 +49,7 @@ class ocpiApp {
                                 );
 
         this.LogView          = document.querySelector("#logView") as HTMLDivElement;
+        //this.LogView.innerHTML = 'XXXX';
 
     }
 
