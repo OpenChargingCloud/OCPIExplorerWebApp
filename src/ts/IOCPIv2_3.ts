@@ -16,16 +16,16 @@
  */
 
 export interface TMetadataDefaults {
-    totalCount:    number;
-    filteredCount: number;
+    totalCount:                     number;
+    filteredCount:                  number;
 }
 
 
 export interface IOCPIResponse {
-    data:                            any;
-    status_code:                     number;
-    status_message?:                 string;
-    timestamp:                       Date;
+    data:                           any;
+    status_code:                    number;
+    status_message?:                string;
+    timestamp:                      Date;
 }
 
 export type VersionNumber =
@@ -56,13 +56,13 @@ export type InterfaceRole =
     "RECEIVER";
 
 export interface IVersion {
-    version:                         VersionNumber;                 // The version number.
-    url:                             string;                        // URL to the endpoint containing version specific information.
+    version:                        VersionNumber;                  // The version number.
+    url:                            string;                         // URL to the endpoint containing version specific information.
 }
 
 export interface IVersionDetail {
-    version:                         VersionNumber;                 // The version number.
-    endpoints:                       Array<IEndpoint>;              // A list of supported endpoints for this version.
+    version:                        VersionNumber;                  // The version number.
+    endpoints:                      Array<IEndpoint>;               // A list of supported endpoints for this version.
 }
 
 export interface IEndpoint {
@@ -298,6 +298,7 @@ export type ParkingType =
      string;
 
 export type ParkingRestriction =
+    "EMPLOYEES"   |                                                 // Parking only for people who work at a site, building, or complex that the Location belongs to.
     "EV_ONLY"     |                                                 // Reserved parking spot for electric vehicles.
     "PLUGGED"     |                                                 // Parking is only allowed while plugged in (charging).
     "CUSTOMERS"   |                                                 // Parking spot for customers/guests only, for example in case of a hotel or shop.
