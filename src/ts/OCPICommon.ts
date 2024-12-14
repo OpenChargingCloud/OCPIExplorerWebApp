@@ -108,9 +108,22 @@ export class OCPI {
 
     //#endregion
 
-    constructor()
-    {}
+    //#region Constructor
 
+    constructor(ocpiAccessToken?:          string,
+                ocpiAccessTokenEncoding?:  boolean) {
+
+        if (ocpiAccessToken)
+            this.ocpiAccessToken         = ocpiAccessToken;
+
+        if (ocpiAccessTokenEncoding)
+            this.ocpiAccessTokenEncoding = ocpiAccessTokenEncoding;
+
+    }
+
+    //#endregion
+
+    //#region SetAccessToken(ocpiAccessToken, ocpiAccessTokenEncoding)
 
     public SetAccessToken(ocpiAccessToken:          string,
                           ocpiAccessTokenEncoding:  boolean) {
@@ -119,6 +132,9 @@ export class OCPI {
         this.ocpiAccessTokenEncoding  = ocpiAccessTokenEncoding;
 
     }
+
+    //#endregion
+
 
 
     public OCPIGet(RessourceURI: string,
