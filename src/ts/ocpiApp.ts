@@ -17,6 +17,7 @@
 
 import * as OCPI from './OCPIExplorer';
 
+// Automagic imports to be included in the HTML of the final app...
 import '../scss/ocpiExplorer.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -34,10 +35,11 @@ class ocpiApp {
     constructor()
     {
 
-        const urlParams       = new URLSearchParams(window.location.search);
-        const url             = urlParams.get('url')   || undefined;
-        const token           = urlParams.get('token') || undefined;
-        const nobase64        = urlParams.has('nobase64');
+                                // Will do automatic URL decoding...
+        const queryString     = new URLSearchParams(window.location.search);
+        const url             = queryString.get('url')   || undefined;
+        const token           = queryString.get('token') || undefined;
+        const nobase64        = queryString.has('nobase64');
 
         this.appDiv           = document.querySelector("#app") as HTMLDivElement;
 
@@ -49,7 +51,6 @@ class ocpiApp {
                                 );
 
         this.LogView          = document.querySelector("#logView") as HTMLDivElement;
-        //this.LogView.innerHTML = 'XXXX';
 
     }
 

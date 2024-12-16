@@ -3,9 +3,9 @@
 This project implements the [**Open Charge Point Interface (OCPI)**](https://github.com/ocpi/ocpi) defined by the [EV Roaming Foundation](https://evroaming.org) as a web application using web technologies like Java-/TypeScript, HTML, and (S)CSS. The focus of this project is **testing** and **certification** of the OCPI protocol and 3rd party vendor extensions. This project supports the following protocol versions and extensions:
 
 - [OCPI v2.1.1](https://github.com/ocpi/ocpi/tree/release-2.1.1-bugfixes) *(under development)*
-- [OCPI v2.2.1](https://github.com/ocpi/ocpi/tree/release-2.1.1-bugfixes) *(under development)*
-- [OCPI v2.3](https://github.com/ocpi/ocpi/tree/release-2.1.1-bugfixes) *(under development)*
-- [OCPI v3.0](https://github.com/ocpi/ocpi/tree/release-2.1.1-bugfixes) *(experimental... there be dragons!)*
+- [OCPI v2.2.1](https://github.com/ocpi/ocpi/tree/release-2.2.1-bugfixes) *(under development)*
+- [OCPI v2.3](https://github.com/ocpi/ocpi/tree/develop-2.3.0) *(under development)*
+- [OCPI v3.0](https://github.com/ocpi/ocpi/tree/develop-3.0) *(experimental... there be dragons!)*
 
 
 ## Installation
@@ -36,6 +36,9 @@ http://localhost:1608?url=https://api.example.org/ocpi2.1/versions&token=2435&no
 | token     | abcd                                     | The OCPI access token.                                                |
 | nobase64  |                                          | The OCPI access token will not be base64 encoded before transmission. |
 
+
+**Note**: For basic usage scenarios, URL encoding these HTTP query parameters is not mandatory.
+However, if the `url` or `token` parameter contains special characters, make sure to URL encode them.
 
 
 ## License
