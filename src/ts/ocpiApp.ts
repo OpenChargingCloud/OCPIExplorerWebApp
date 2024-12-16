@@ -59,5 +59,3 @@ class ocpiApp {
 document.addEventListener('DOMContentLoaded', (event) => {
     const app = new ocpiApp();
 });
-
-
