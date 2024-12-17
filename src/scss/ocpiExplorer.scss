@@ -47,7 +47,7 @@ html {
 
                 .top {
 
-                    flex-grow: 1;
+                    flex-grow:              1;
 
                     #search {
 
@@ -419,31 +419,70 @@ html {
                 align-items:            center;
                 justify-content:        center;
 
-                #ocpiEndpoint {
+                #dropArea {
 
-                    display:                flex;
-                    flex-direction:         row;
-                    gap:                    4px;
-                    border-radius:          10px;
-                    user-select:            none;
+                    display:                grid;
+                    place-items:            center;
 
-                    &:hover {
-                        background-color:       $backgroundColor;
-                    }
+                    #ocpiEndpoint {
 
-                    #inputs {
-
+                        grid-area:              1 / 1 / 2 / 2;
                         display:                flex;
-                        flex-direction:         column;
-                        gap:                    2px;
+                        flex-direction:         row;
+                        gap:                    4px;
+                        border-radius:          10px;
+                        user-select:            none;
 
-                        input[type="text"], input[type="url"] {
+                        &:hover {
+                            background-color:       $backgroundColor;
+                        }
 
-                            padding:                6px 8px;
-                            width:                  40vw;
+                        #inputs {
+
+                            display:                flex;
+                            flex-direction:         column;
+                            gap:                    2px;
+
+                            input[type="text"], input[type="url"] {
+
+                                padding:                6px 8px;
+                                width:                  40vw;
+                                border:                 0;
+                                border-radius:          4px;
+                                background-color:       $inputBackgroundColor;
+
+                                &:hover {
+                                    background-color:       $hoverColor;
+                                }
+
+                            }
+
+                            #accessTokenEncoding {
+
+                                display:                flex;
+                                align-self:             end;
+                                padding-right:          8px;
+
+                                input[type="checkbox"] {
+                                    margin-right:           5px;
+                                }
+
+                                label {
+                                    font-size:              70%;
+                                    padding-top:            3.5px;
+                                }
+
+                            }
+
+
+                        }
+
+                        button {
+
+                            padding:                6px 14px;
                             border:                 0;
-                            border-radius:          4px;
-                            background-color:       $inputBackgroundColor;
+                            border-radius:          6px;
+                            background-color:       $buttonBackgroundColor;
 
                             &:hover {
                                 background-color:       $hoverColor;
@@ -451,37 +490,87 @@ html {
 
                         }
 
-                        #accessTokenEncoding {
+                    }
 
-                            display:                flex;
-                            align-self:             end;
-                            padding-right:          8px;
+                    #connectionSettingsDropArea {
 
-                            input[type="checkbox"] {
-                                margin-right:           5px;
-                            }
+                        grid-area:              1 / 1 / 2 / 2;
+                        visibility:             hidden;
+                        background-color:       #bcbce6;
+                        width:                  100%;
+                        height:                 100%;
+                        display:                flex;
+                        align-items:            center;
+                        justify-content:        center;
+                        border:                 2px dashed transparent;
+                        border-radius:          10px;
+                        user-select:            none;
 
-                            label {
-                                font-size:              70%;
-                                padding-top:            3.5px;
-                            }
-
+                        .text {
+                            display:                inline-block;
+                            margin-left:            6px;
                         }
 
+                        &.active {
+                            visibility:             visible;
+                            color:                  #000000;
+                            background-color:       #9999ff;;
+                            border-color:           #000000;
+                        }
+
+                        &.error {
+                            visibility:             visible;
+                            color:                  #FF0000;
+                            background-color:       #e4a6a6;
+                        }
 
                     }
 
-                    button {
+                }
 
-                        padding:                6px 14px;
-                        border:                 0;
-                        border-radius:          6px;
-                        background-color:       $buttonBackgroundColor;
+                #fileDropArea {
 
-                        &:hover {
-                            background-color:       $hoverColor;
+                    display:                flex;
+                    padding:                12px 75px;
+                    color:                  #BBBBBB;
+                    background-color:       #F3F3F3;
+                    border-radius:          10px;
+                    margin-top:             1vh;
+                    border:                 2px dashed transparent;
+                    user-select:            none;
+
+                    .text {
+
+                        //display:                inline-block;
+                        margin-left:            6px;
+
+                        button {
+
+                            border:                 0;
+                            background:             none;
+                            font-size:              100%;
+                            margin:                 0;
+                            padding:                0;
+                            font-style:             italic;
+                            color:                #a0a0a0;
+
+                            &:hover {
+                                color:                  #4c4cc0;
+                            }
+
                         }
 
+                    }
+
+                    &.active {
+                        color:                  #000000;
+                        background-color:       #9999ff;;
+                        border-color:           #000000;
+                    }
+
+                    &.error {
+                        color:                  #FF0000;
+                        background-color:       #e4a6a6;
                     }
 
                 }

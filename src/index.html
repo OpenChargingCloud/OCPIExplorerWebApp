@@ -36,17 +36,37 @@
     <div id="app">
 
         <div id="connectScreen" class="screen">
-            <div id="ocpiEndpoint" class="defaultBox">
-                <div id="inputs">
-                    <input id="ocpiVersionsURLInput" type="url"  placeholder="The OCPI versions endpoint...">
-                    <input id="ocpiAccessTokenInput" type="text" placeholder="Your OCPI access token...">
-                    <div id="accessTokenEncoding">
-                        <input id="accessTokenEncodingCheck" type="checkbox" name="accessTokenEncoding">
-                        <label for="accessTokenEncodingCheck">Base64 Encoding?</label>
+
+            <div id="dropArea" ondragover  = "onConnectionSettingsDropDragOver(event)"
+                               ondragleave = "onConnectionSettingsDropDragLeave(event)"
+                               ondrop      = "onConnectionSettingsDrop(event)">
+
+                <div id="ocpiEndpoint" class="defaultBox">
+                    <div id="inputs">
+                        <input id="ocpiVersionsURLInput" type="url"  placeholder="The OCPI versions endpoint...">
+                        <input id="ocpiAccessTokenInput" type="text" placeholder="Your OCPI access token...">
+                        <div id="accessTokenEncoding">
+                            <input id="accessTokenEncodingCheck" type="checkbox" name="accessTokenEncoding">
+                            <label for="accessTokenEncodingCheck">Base64 Encoding?</label>
+                        </div>
                     </div>
+                    <button id="connectButton">Connect</button>
                 </div>
-                <button id="connectButton">Connect</button>
+
+                <div id="connectionSettingsDropArea">
+                    <i class="fa-regular fa-paste"></i>
+                    <div class="text">Drop connection settings!</div>
+                </div>
+
             </div>
+
+            <div id="fileDropArea" ondragover  = "onFileDropDragOver(event)"
+                                   ondragleave = "onFileDropDragLeave(event)"
+                                   ondrop      = "onFileDrop(event)">
+                <i class="fa-regular fa-paste"></i>
+                <div class="text">Drop or <button id="fileSelectButton">select</button> files!</div>
+            </div>
+
         </div>
 
         <div id="versionsScreen" class="screen">
