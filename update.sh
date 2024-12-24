@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Check if 'jq' is installed
 # On Windows run e.g. 'choco install jq' within an admin shell
 if ! command -v jq > /dev/null 2>&1; then
   echo "Error: 'jq' is not installed."
