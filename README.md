@@ -4,7 +4,7 @@ This project implements the [**Open Charge Point Interface (OCPI)**](https://git
 
 - [OCPI v2.1.1](https://github.com/ocpi/ocpi/tree/release-2.1.1-bugfixes) *(under development)*
 - [OCPI v2.2.1](https://github.com/ocpi/ocpi/tree/release-2.2.1-bugfixes) *(under development)*
-- [OCPI v2.3](https://github.com/ocpi/ocpi/tree/develop-2.3.0) *(under development)*
+- [OCPI v2.3.0-rc2](https://github.com/ocpi/ocpi/tree/develop-2.3.0) *(under development)*
 - [OCPI v3.0](https://github.com/ocpi/ocpi/tree/develop-3.0) *(experimental... there be dragons!)*
 
 
